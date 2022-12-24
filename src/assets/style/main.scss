@@ -1,0 +1,68 @@
+@import "./common/font.scss", "./common/common.scss", "./mixin.scss",
+  "@/components/InfoBlock/InfoBlock.scss", "@/components/Content/Content.scss",
+  "@/components/Search/Search.scss", "@/components/InfoId/Info.scss",
+  '@/components/UI/Treyler.scss';
+
+.load {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #1f1f1f;
+}
+.loader {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  animation: loading linear infinite 1s;
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: aqua;
+    box-shadow: 0 0 15px aqua, 0 0 30px aqua, 0 0 40px aqua, 0 0 50px aqua,
+      0 0 60px aqua, 0 0 70px aqua;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 11;
+  }
+  &::after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient(
+      to top,
+      transparent,
+      rgba(0, 255, 255, 0.8)
+    );
+    background-size: 170px 170px;
+    background-repeat: no-repeat;
+    border-radius: 200px 0 0 200px;
+    top: 0;
+    left: 0;
+    z-index: 7;
+  }
+  &__circle {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border-radius: 50%;
+    background: #1f1f1f;
+  }
+}
+@keyframes loading {
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+

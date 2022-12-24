@@ -1,0 +1,197 @@
+@import "@/assets/style/mixin.scss";
+.main__upcoming {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  &-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &::after {
+      content: "";
+      background: rgba(20, 20, 20, 0.76);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -5;
+    }
+    &-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-title {
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 1.2;
+    color: #ffffff;
+    @include media(1260) {
+      font-size: 60px;
+    }
+    @include media(1100) {
+      font-size: 50px;
+    }
+    @include media(910) {
+      font-size: 40px;
+    }
+    @include media(600) {
+      font-size: 35px;
+    }
+    @include media(435) {
+      font-size: 30px;
+    }
+    @include media(350) {
+      font-size: 25px;
+    }
+  }
+  &-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    color: #ffffff;
+    margin: 50px auto;
+    max-width: 960px;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    
+    overflow: hidden;
+    @include media(1100) {
+      font-size: 18px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    @include media(910) {
+      font-size: 16px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    @include media(600) {
+      font-size: 14px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+  &-next {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 576px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(90deg, #000000 55%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 10px;
+    padding: 15px;
+    gap: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    @include media(1100) {
+      width: 480px;
+      gap: 10px;
+    }
+    @include media(900) {
+      width: 400px;
+    }
+    @include media(720) {
+      display: none;
+    }
+
+    &-img {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
+    &-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #ffffff;
+    }
+    &-title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 21px;
+      color: #ffffff;
+    }
+    &-line {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      height: 3px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      &::after {
+        content: "";
+        display: block;
+        background: #ffffff;
+        height: 100%;
+        animation: next 10s linear;
+      }
+    }
+  }
+}
+@keyframes next {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.upcoming-item{
+  overflow: hidden;
+}
+.upcoming-item-enter-active,
+.upcoming-item-leave-active {
+  transition: 0.3s linear;
+}
+.upcoming-item-enter-from {
+  opacity: 0;
+  transform: scale(1);
+}
+.upcoming-item-leave-to {
+  opacity: 0;
+  transform: scale(1.2);
+}
+.upcoming-enter-active,
+.upcoming-leave-active {
+  transition: 0.3s ease;
+}
+.upcoming-enter-from {
+  opacity: 0;
+  transform: scale(1);
+}
+.upcoming-leave-to {
+  opacity: 0;
+  transform: scale(1.2);
+}
+

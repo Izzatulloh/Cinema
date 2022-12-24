@@ -1,0 +1,85 @@
+@import "@/assets/style/mixin.scss",
+"../../assets/style/common/font.scss";
+
+.main__top {
+    padding: 30px 0 50px;
+    background: #fff;
+    &-item {
+        cursor: pointer;
+        height: 463px;
+        display: flex;
+        align-items: center;
+        background: #141414;
+        box-shadow: 0px 20px 15px -10px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        &-title{
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+        }
+    }
+
+    &-title {
+        margin-left: 100px;
+        font-family: "Montserrat";
+        margin-bottom: 80px;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1;
+        color: #141414;
+
+        span {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 0.6;
+            color: #149A03;
+            margin-left: 10px;
+        }
+    }
+
+    &-img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+
+    }
+
+    &-box {
+        width: 313px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #141414 0%, rgba(20, 20, 20, 0) 102.08%);
+
+        }
+    }
+
+    &-number {
+        font-family: 'Montserrat';
+        font-style: italic;
+        font-weight: 700;
+        font-size: 150px;
+        line-height: 1.2;
+        color: #FFFFFF;
+        margin-left: 80px;
+    }
+}

@@ -1,0 +1,111 @@
+@import "@/assets/style/mixin.scss";
+.main__content {
+  margin-top: 140px;
+  @include media(1100) {
+    margin-top: 120px !important;
+  }
+  @include media(500) {
+    margin-top: 100px !important;
+  }
+  &-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+    margin-bottom: 50px;
+    @include media(1100) {
+      margin-bottom: 30px;
+    }
+    @include media(500) {
+      margin-bottom: 15px;
+      text-align: center;
+     
+    }
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    @include media(1140) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @include media(600){
+      gap: 15px;
+    }
+  }
+  &-item {
+    height: 450px;
+    max-width: 320px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 15px;
+    border: 1px solid #000000;
+    filter: drop-shadow(0px 4px 4px #000000);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    @include media(1040) {
+      max-width: 300px;
+      width: 100%;
+      height: 400px;
+    }
+    @include media(660) {
+      max-width: 250px;
+      width: 100%;
+      height: 320px;
+    }
+    @include media(560) {
+      max-width: 220px;
+      width: 100%;
+      height: 280px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        358.77deg,
+        #000000 0.69%,
+        rgba(0, 0, 0, 0.723958) 37.71%,
+        rgba(0, 0, 0, 0) 72.49%
+      );
+      z-index: -1;
+    }
+    &-title {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -10;
+      transition: 0.5s;
+    }
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.3), 0 0 50px rgba(255, 255, 255, 0.3);
+      img {
+        opacity: 0.5;
+        transform: scale(1.05);
+      }
+    }
+  }
+}

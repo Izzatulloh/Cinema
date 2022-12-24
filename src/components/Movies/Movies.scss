@@ -1,0 +1,148 @@
+@import "@/assets//style/mixin";
+
+.main__pop {
+    padding-top: 25px;
+    &-title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 1.2;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-left: 100px;
+
+        @include media(1050) {
+            margin-left: 0;
+            justify-content: center;
+        }
+
+
+
+    }
+   
+    &-item {
+        border: 1px solid #000000;
+        filter: drop-shadow(0px 4px 4px #000000);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 313px;
+        height: 464px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        line-height: 1.5;
+        color: #FFFFFF;
+        transition: 0.5s;
+        position: relative;
+        &-link{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            display: none;
+            @include media(900){
+                display: block;
+            }
+        }
+        &-content{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @include media(800) {
+            height: 400px;
+        }
+
+        @include media(480) {
+            height: 350px;
+        }
+
+        &-title {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: 0.5s;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+            0 0 20px rgba(255, 255, 255, 0.3),
+            0 0 30px rgba(255, 255, 255, 0.3),
+            0 0 40px rgba(255, 255, 255, 0.3),
+            0 0 50px rgba(255, 255, 255, 0.3);
+            img {
+                opacity: 0.5;
+                transform: scale(1.05);
+            }
+        }
+
+    }
+
+    &-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        position: absolute;
+        z-index: -1;
+        transition: 0.5s;
+    }
+}
+
+.swiper {
+    padding: 30px 100px !important;
+    margin: 30px 0;
+
+    @include media(1050) {
+        padding: 30px 70px !important;
+    }
+
+    @include media(700) {
+        padding: 30px 50px !important;
+    }
+
+    @include media(575) {
+        padding: 20px 100px !important;
+    }
+
+    @include media(475) {
+        padding: 20px 70px !important;
+    }
+
+    @include media(400) {
+        padding: 10px 40px !important;
+    }
+
+    @include media(350) {
+        padding: 10px 20px !important;
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    opacity: 1 !important;
+    color: white !important;
+
+    &.swiper-button-disabled {
+        display: none;
+    }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-weight: 700;
+    font-size: 30px;
+}

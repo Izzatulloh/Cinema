@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+  font-weight: 700;
+  color: white;
+}
+
+body {
+  background-color: #1f1f1f;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar{
+  width: 15px;
+  background-color: #1f1f1f;
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(to bottom, #3800AF 0%, #BF7204 97.52%, #C27500 100%, #C27500 100%);
+  border-radius: 15px;
+}
+a {
+  text-decoration: none;
+
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1350px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
